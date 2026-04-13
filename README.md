@@ -1,9 +1,5 @@
-HammerSpoon config for people who like having the "~" next to the number 1 key, not all the way at the bottom left of the keyboard next to the "z" key. 
+My full setup when I start work on a new macOS workstation.
 
-Also for people who type in Bulgarian and want to have the "ч" right next to the number 1 key, just like in the Phonetic traditional keyboard layout on Windows.
+The script is downloaded locally before execution.
 
-Most of this was generated and tested over 1 week of vibe coding in LUA
-
-I faced several issues that caused Hammerspoon to stop working when jumping in and out of RDP sessions connected to Windows Server VMs and that forced me to have to reload the Hammerspoon config everytime, that's why the Watchdog function was added
-
-Now after having used this config for over 3 months with no issues, I am sharing it on GitHub.
+curl -fsSL https://raw.githubusercontent.com/PetarSyarov/macos-workstation-setup/main/bootstrap.sh -o /tmp/bootstrap.sh && bash /tmp/bootstrap.sh
