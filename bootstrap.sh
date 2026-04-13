@@ -55,14 +55,17 @@ log "Updating Homebrew"
 brew update
 
 # -------------------------------------------------------------------
-# 5) Install apps
+# 5) Install apps from Brewfile
 # -------------------------------------------------------------------
 log "Installing apps from Brewfile"
 
-BREWFILE_URL="https://raw.githubusercontent.com/PetarSyarov/macos-workstation-setup/main/brewfile"
-TMP_BREWFILE="/tmp/brewfile.$$"
+BREWFILE_URL="https://raw.githubusercontent.com/PetarSyarov/macos-workstation-setup/main/Brewfile"
+TMP_BREWFILE="/tmp/Brewfile.$$"
 
-curl -fsSL "$BREWFILE_URL" -o "$TMP_BREWFILE" || { echo "Failed to download Brewfile"; exit 1; }
+curl -fsSL "$BREWFILE_URL" -o "$TMP_BREWFILE" || {
+  echo "Failed to download Brewfile"
+  exit 1
+}
 
 brew bundle --file="$TMP_BREWFILE"
 
@@ -76,12 +79,15 @@ INIT_URL="https://raw.githubusercontent.com/PetarSyarov/macos-workstation-setup/
 
 mkdir -p "$HAMMERSPOON_DIR"
 
-curl -fsSL "$INIT_URL" -o "$HAMMERSPOON_DIR/init.lua" || { echo "Failed to download init.lua"; exit 1; }
+curl -fsSL "$INIT_URL" -o "$HAMMERSPOON_DIR/init.lua" || {
+  echo "Failed to download init.lua"
+  exit 1
+}
 
 echo "Hammerspoon config installed to $HAMMERSPOON_DIR/init.lua"
 
 # -------------------------------------------------------------------
-# 7) Optional: launch apps once so macOS registers them
+# 7) Launch apps once so macOS registers them
 # -------------------------------------------------------------------
 log "Launching apps once"
 open -a Hammerspoon || true
