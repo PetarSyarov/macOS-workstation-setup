@@ -1,0 +1,3 @@
+Tests passed:
+
+- Fresh macOS install. Ran command without modifications.
