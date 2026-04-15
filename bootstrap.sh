@@ -54,10 +54,14 @@ fi
 # -------------------------------------------------------------------
 # 4) Update Homebrew
 # -------------------------------------------------------------------
+log "Installing openssl before forcing update"
+brew install openssl
+brew link --force openssl
+echo "Finished opensll install"
 
-cd /Users/$CURRENT_USER/homebrew
 log "Updating Homebrew"
 brew update
+echo "Finished update"
 
 # -------------------------------------------------------------------
 # 5) Install apps from Brewfile
