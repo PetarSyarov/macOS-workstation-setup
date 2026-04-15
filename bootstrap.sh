@@ -59,6 +59,8 @@ brew update
 # -------------------------------------------------------------------
 log "Installing apps from Brewfile"
 
+brew install powershell
+
 BREWFILE_URL="https://raw.githubusercontent.com/PetarSyarov/macos-workstation-setup/main/Brewfile"
 TMP_BREWFILE="/tmp/Brewfile.$$"
 
