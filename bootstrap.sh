@@ -31,7 +31,7 @@ fi
 if ! command -v brew >/dev/null 2>&1; then
   log "Installing Homebrew"
   NONINTERACTIVE=1 /bin/bash -c \
-    "$(sudo curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   log "Homebrew already installed"
 fi
