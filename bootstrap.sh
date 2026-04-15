@@ -28,13 +28,10 @@ fi
 # -------------------------------------------------------------------
 # 2) Install Homebrew if missing
 # -------------------------------------------------------------------
-
-CURRENT_USER=$(stat -f '%Su' /dev/console)
-
 if ! command -v brew >/dev/null 2>&1; then
   log "Installing Homebrew"
   NONINTERACTIVE=1 /bin/bash -c \
-    "mkdir /Users/$CURRENT_USER/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew"
+    "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   log "Homebrew already installed"
 fi
@@ -42,10 +39,10 @@ fi
 # -------------------------------------------------------------------
 # 3) Load Homebrew into current shell
 # -------------------------------------------------------------------
-if [[ -x /Users/$CURRENT_USER/homebrew ]]; then
-  eval "$(/Users/$CURRENT_USER/homebrew shellenv)"
-elif [[ -x /Users/$CURRENT_USER/homebrew ]]; then
-  eval "$(/Users/$CURRENT_USER/homebrew shellenv)"
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
 else
   echo "Homebrew was not found after install."
   exit 1
@@ -54,19 +51,8 @@ fi
 # -------------------------------------------------------------------
 # 4) Update Homebrew
 # -------------------------------------------------------------------
-log "Installing openssl before forcing update"
-brew install openssl
-brew link --force openssl
-echo "Finished opensll install"
-
-log "Removing curl"
-brew install --with-openssl curl
-brew link --force curl || :
-curl -V
-
 log "Updating Homebrew"
 brew update
-echo "Finished update"
 
 # -------------------------------------------------------------------
 # 5) Install apps from Brewfile
