@@ -31,7 +31,7 @@ fi
 if ! command -v brew >/dev/null 2>&1; then
   log "Installing Homebrew"
   NONINTERACTIVE=1 /bin/bash -c \
-    "mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew"
+    "mkdir /opt/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew"
 else
   log "Homebrew already installed"
 fi
