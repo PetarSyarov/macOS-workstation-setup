@@ -96,12 +96,9 @@ open -a Hammerspoon || true
 open -a BetterDisplay || true
 open -a "Scroll Reverser" || true
 
-sleep 10
-osascript -e 'tell application "Hammerspoon" to reload config' || true
-
 echo
 echo "Done."
-echo "You may still need to approve permissions in System Settings:"
-echo "- Hammerspoon may need Accessibility permission"
-echo "- Scroll Reverser may need Accessibility permission"
-echo "- BetterDisplay may ask for extra permissions depending on features used"
+echo "You will need to reload Hammerspoon config manually"
+echo "- Hammerspoon will need Accessibility permission"
+echo "- Scroll Reverser will need Accessibility permission"
+echo "- BetterDisplay will ask for extra permissions depending on features used"
