@@ -54,6 +54,8 @@ fi
 # -------------------------------------------------------------------
 # 4) Update Homebrew
 # -------------------------------------------------------------------
+
+cd /Users/$CURRENT_USER/homebrew
 log "Updating Homebrew"
 brew update
 
