@@ -11,22 +11,22 @@ log() {
 }
 
 # -------------------------------------------------------------------
-# 1) Install Xcode Command Line Tools if missing
+#  Install Xcode Command Line Tools if missing
 # -------------------------------------------------------------------
-if ! xcode-select -p >/dev/null 2>&1; then
-  log "Installing Xcode Command Line Tools"
-  xcode-select --install || true
+#if ! xcode-select -p >/dev/null 2>&1; then
+ # log "Installing Xcode Command Line Tools"
+  #xcode-select --install || true
 
-  echo "Waiting for Command Line Tools installation to finish..."
-  until xcode-select -p >/dev/null 2>&1; do
-    sleep 5
-  done
-else
-  log "Xcode Command Line Tools already installed"
-fi
+  #echo "Waiting for Command Line Tools installation to finish..."
+  #until xcode-select -p >/dev/null 2>&1; do
+  #  sleep 5
+  #done
+#else
+  #log "Xcode Command Line Tools already installed"
+#fi
 
 # -------------------------------------------------------------------
-# 2) Install Homebrew if missing
+#  Install Homebrew if missing
 # -------------------------------------------------------------------
 if ! command -v brew >/dev/null 2>&1; then
   log "Installing Homebrew"
@@ -37,7 +37,7 @@ else
 fi
 
 # -------------------------------------------------------------------
-# 3) Load Homebrew into current shell
+#  Load Homebrew into current shell
 # -------------------------------------------------------------------
 if [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -49,13 +49,13 @@ else
 fi
 
 # -------------------------------------------------------------------
-# 4) Update Homebrew
+#  Update Homebrew
 # -------------------------------------------------------------------
 log "Updating Homebrew"
 brew update
 
 # -------------------------------------------------------------------
-# 5) Install apps from Brewfile
+#  Install apps from Brewfile
 # -------------------------------------------------------------------
 log "Installing apps from Brewfile"
 
@@ -70,7 +70,7 @@ curl -fsSL "$BREWFILE_URL" -o "$TMP_BREWFILE" || {
 brew bundle --file="$TMP_BREWFILE"
 
 # -------------------------------------------------------------------
-# 6) Install Hammerspoon config (init.lua)
+#  Install Hammerspoon config (init.lua)
 # -------------------------------------------------------------------
 log "Setting up Hammerspoon config"
 
@@ -87,7 +87,7 @@ curl -fsSL "$INIT_URL" -o "$HAMMERSPOON_DIR/init.lua" || {
 echo "Hammerspoon config installed to $HAMMERSPOON_DIR/init.lua"
 
 # -------------------------------------------------------------------
-# 7) Launch apps once so macOS registers them
+#  Launch apps once so macOS registers them
 # -------------------------------------------------------------------
 log "Launching apps once"
 open -a Hammerspoon || true
