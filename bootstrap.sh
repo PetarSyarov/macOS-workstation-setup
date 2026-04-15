@@ -59,6 +59,11 @@ brew install openssl
 brew link --force openssl
 echo "Finished opensll install"
 
+log "Removing curl"
+brew install --with-openssl curl
+brew link --force curl || :
+curl -V
+
 log "Updating Homebrew"
 brew update
 echo "Finished update"
