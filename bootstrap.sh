@@ -96,7 +96,7 @@ open -a Hammerspoon || true
 open -a BetterDisplay || true
 open -a "Scroll Reverser" || true
 
-sleep 3
+sleep 10
 osascript -e 'tell application "Hammerspoon" to reload config' || true
 
 echo
