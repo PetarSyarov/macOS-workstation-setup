@@ -31,7 +31,7 @@ fi
 if ! command -v brew >/dev/null 2>&1; then
   log "Installing Homebrew"
   NONINTERACTIVE=1 /bin/bash -c \
-    "mkdir /opt/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew"
+    "mkdir /users/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew"
 else
   log "Homebrew already installed"
 fi
@@ -39,10 +39,10 @@ fi
 # -------------------------------------------------------------------
 # 3) Load Homebrew into current shell
 # -------------------------------------------------------------------
-if [[ -x /opt/homebrew/bin/brew ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ -x /usr/local/bin/brew ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"
+if [[ -x /users/homebrew/bin/brew ]]; then
+  eval "$(/users/homebrew/bin/brew shellenv)"
+elif [[ -x /users/local/bin/brew ]]; then
+  eval "$(/users/local/bin/brew shellenv)"
 else
   echo "Homebrew was not found after install."
   exit 1
