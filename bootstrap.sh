@@ -11,21 +11,6 @@ log() {
 }
 
 # -------------------------------------------------------------------
-#  Install Xcode Command Line Tools if missing
-# -------------------------------------------------------------------
-#if ! xcode-select -p >/dev/null 2>&1; then
- # log "Installing Xcode Command Line Tools"
-  #xcode-select --install || true
-
-  #echo "Waiting for Command Line Tools installation to finish..."
-  #until xcode-select -p >/dev/null 2>&1; do
-  #  sleep 5
-  #done
-#else
-  #log "Xcode Command Line Tools already installed"
-#fi
-
-# -------------------------------------------------------------------
 #  Install Homebrew if missing
 # -------------------------------------------------------------------
 if ! command -v brew >/dev/null 2>&1; then

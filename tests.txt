@@ -2,3 +2,4 @@ Tests passed:
 
 - Fresh macOS install. Ran command with sudo.
 - Fresh macOS install. (Preinstalled Homebrew) Ran without sudo.
+- Ran after removed Xcode tools install function
