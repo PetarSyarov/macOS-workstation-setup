@@ -62,7 +62,7 @@ log "Setting up Hammerspoon config"
 HAMMERSPOON_DIR="$HOME/.hammerspoon"
 INIT_URL="https://raw.githubusercontent.com/PetarSyarov/macos-workstation-setup/main/init.lua"
 
-mkdir -p "$HAMMERSPOON_DIR"
+mkdir -p "$HAMMERSPOON_DIR" 
 
 curl -fsSL "$INIT_URL" -o "$HAMMERSPOON_DIR/init.lua" || {
   echo "Failed to download init.lua"

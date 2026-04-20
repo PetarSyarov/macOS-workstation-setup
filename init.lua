@@ -3,6 +3,7 @@
 -- Bulgarian – QWERTY → ч / Ч
 -- English / others → ` / ~
 -- Includes: SUPER WATCHDOG FIX + auto restart on layout change
+-- Only for when keyboard is in ISO layout, but you want "~" placement like ANSI
 -----------------------------------------------------------------------
 
 
