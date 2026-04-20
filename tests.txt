@@ -1,11 +1,5 @@
 Tests passed:
 
-<<<<<<< HEAD
 - Fresh macOS install. Ran command with sudo.
 - Fresh macOS install. (Preinstalled Homebrew) Ran without sudo.
 - Ran after removing the Xcode CLI tools installation function
-=======
-✅ Fresh macOS install. Ran command with sudo.
-✅ Fresh macOS install. (Preinstalled Homebrew) Ran without sudo.
-✅ Ran after removed Xcode tools install function
->>>>>>> 75d95b3d8ab4ff44b3fe80e366e29a131085dd52
