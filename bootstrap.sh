@@ -78,7 +78,6 @@ log "Launching apps once"
 open -a Hammerspoon || true
 open -a BetterDisplay || true
 open -a "Scroll Reverser" || true
-open -a KeePassXC || true
 
 echo
 echo "Done."
